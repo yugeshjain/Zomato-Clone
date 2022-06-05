@@ -480,4 +480,16 @@
     <string name="slovenia_hint" translatable="false">070 123 456</string>
     <string name="select_country">Select Country</string>
     <string name="invalid_number">Invalid Phone Number</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="content_policy">Content Policy</string>
+    <string name="by_continuing_you_agree_to_our">By continuing, you agree to our</string>
+    <string name="login_page_top_heading_one">India\'s #1 Food Delivery</string>
+    <string name="login_page_top_heading_two">and Dining App</string>
+    <string name="login_or_signup">Log in or sign up</string>
+    <string name="or_divider_text">or</string>
+    <string name="skip_button_text">Skip</string>
+    <string name="continue_button_text">Continue</string>
+    <string name="google_logo">Google Logo</string>
+    <string name="three_dots_logo">Three Dots</string>
 </resources>
