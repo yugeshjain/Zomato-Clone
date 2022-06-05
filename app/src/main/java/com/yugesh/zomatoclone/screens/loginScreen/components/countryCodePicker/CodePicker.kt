@@ -78,9 +78,10 @@ class CodePicker {
                     Text(
                         text = isPickCountry.countryPhoneCode,
                         fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(start = 6.dp)
+                        modifier = Modifier.padding(start = 6.dp),
+                        color = Color.DarkGray
                     )
-                    Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = null)
+                    Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = null, tint = Color.DarkGray)
                 }
             }
         }

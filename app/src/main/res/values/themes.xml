@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.ZomatoClone" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
-        <item name="android:statusBarColor">@color/white</item>
+    <style name="Theme.ZomatoClone" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">#CB202D</item>
+        <item name="android:colorAccent">#F4F4F2</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 </resources>
