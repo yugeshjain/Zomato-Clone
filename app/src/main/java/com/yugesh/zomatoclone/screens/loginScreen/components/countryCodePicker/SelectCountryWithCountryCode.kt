@@ -20,8 +20,6 @@ fun SelectCountryWithCountryCode() {
                 defaultLang = it.countryCode
             },
             defaultCountry = getLibCountries().single { it.countryCode == defaultLang },
-            dialogAppBarTextColor = Black,
-            dialogAppBarColor = DarkGray,
             text = phoneNumber.value,
             onValueChange = { phoneNumber.value = it }
         )

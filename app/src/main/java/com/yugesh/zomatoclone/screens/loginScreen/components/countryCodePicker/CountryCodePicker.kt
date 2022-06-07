@@ -26,9 +26,7 @@ fun CountryCodePicker(
     color: Color = Color.White,
     showCountryCode: Boolean = true,
     defaultCountry: CountryData,
-    pickedCountry: (CountryData) -> Unit,
-    dialogAppBarColor: Color = Color.DarkGray,
-    dialogAppBarTextColor: Color = Color.DarkGray
+    pickedCountry: (CountryData) -> Unit
 ) {
     var textFieldValueState by remember { mutableStateOf(TextFieldValue(text = text)) }
     val textFieldValue = textFieldValueState.copy(text = text)
@@ -59,7 +57,7 @@ fun CountryCodePicker(
                     placeholder = {
                         Text(
                             text = "Enter Phone Number",
-                            color = Color.DarkGray,
+                            color = Color.LightGray,
                             fontWeight = FontWeight.Bold
                         )
                     },
@@ -68,20 +66,23 @@ fun CountryCodePicker(
                         autoCorrect = true,
                     ),
                     keyboardActions = KeyboardActions(onDone = { keyboardController?.hideSoftwareKeyboard() }),
+                    colors = TextFieldDefaults.outlinedTextFieldColors(
+                        focusedBorderColor = Color.Transparent,
+                        unfocusedBorderColor = Color.Transparent,
+                        cursorColor = Color.DarkGray,
+                        textColor = Color.Black
+                    ),
                     leadingIcon = {
                         Row {
                             Column {
-                                val dialog = CodePicker()
-                                dialog.CodeDialog(
+                                CodeDialog(
                                     pickedCountry = pickedCountry,
                                     defaultSelectedCountry = defaultCountry,
-                                    dialogAppBarColor = dialogAppBarColor,
-                                    showCountryCode = showCountryCode,
-                                    dialogAppBarTextColor = dialogAppBarTextColor
+                                    showCountryCode = showCountryCode
                                 )
                             }
                         }
-                    }
+                    },
                 )
             }
         }
