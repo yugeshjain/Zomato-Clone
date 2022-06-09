@@ -1,28 +1,29 @@
 package com.yugesh.zomatoclone.screens.loginScreen.components.countryCodePicker
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.graphics.Color.Companion.Black
-import androidx.compose.ui.graphics.Color.Companion.DarkGray
-import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.platform.LocalContext
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
 @Composable
-fun SelectCountryWithCountryCode() {
+fun SelectCountryWithCountryCode(
+    navigator: DestinationsNavigator
+) {
     val context = LocalContext.current
     val phoneNumber = rememberSaveable { mutableStateOf("") }
     var defaultLang by rememberSaveable { mutableStateOf(getDefaultLangCode(context)) }
-    Column{
-
+    Column {
         CountryCodePicker(
             pickedCountry = {
                 defaultLang = it.countryCode
             },
             defaultCountry = getLibCountries().single { it.countryCode == defaultLang },
-            dialogAppBarTextColor = Black,
-            dialogAppBarColor = DarkGray,
             text = phoneNumber.value,
+            navigator = navigator,
             onValueChange = { phoneNumber.value = it }
         )
     }

@@ -492,4 +492,7 @@
     <string name="continue_button_text">Continue</string>
     <string name="google_logo">Google Logo</string>
     <string name="three_dots_logo">Three Dots</string>
+    <string name="delivery_bottom_nav">Delivery</string>
+    <string name="dining_bottom_nav">Dining</string>
+    <string name="zpl_bottom_nav">ZPL</string>
 </resources>

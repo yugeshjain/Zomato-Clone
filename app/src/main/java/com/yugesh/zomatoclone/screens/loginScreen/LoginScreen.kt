@@ -1,50 +1,62 @@
 package com.yugesh.zomatoclone.screens.loginScreen
 
-import androidx.compose.foundation.BorderStroke
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.R
+import com.yugesh.zomatoclone.screens.destinations.HomeScreenDestination
+import com.yugesh.zomatoclone.screens.loginScreen.components.HeadingText
 import com.yugesh.zomatoclone.screens.loginScreen.components.LoginTextDivider
 import com.yugesh.zomatoclone.screens.loginScreen.components.OrTextDivider
+import com.yugesh.zomatoclone.screens.loginScreen.components.RoundButton
+import com.yugesh.zomatoclone.screens.loginScreen.components.UnderlinedText
 import com.yugesh.zomatoclone.screens.loginScreen.components.countryCodePicker.SelectCountryWithCountryCode
 
+@Destination(start = true)
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    navigator: DestinationsNavigator
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = { BottomInfoBar() }
     ) {
-        LoginForm()
+        LoginForm(navigator = navigator)
     }
 }
 
 @Composable
-fun LoginForm() {
+fun LoginForm(
+    navigator: DestinationsNavigator
+) {
 
-    val iconsOutline: Dp = 50.dp
-    val iconsSize: Dp = 30.dp
-    val topHeadingFontSize = 24.sp
     val skipButtonFontSize = 12.sp
-    val skipButtonAlpha = 0.9f
+    val skipButtonAlpha = 0.8f
 
     Column(
         modifier = Modifier
@@ -59,10 +71,11 @@ fun LoginForm() {
             )
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { navigator.navigate(HomeScreenDestination) },
                 modifier = Modifier
                     .padding(30.dp)
-                    .alpha(skipButtonAlpha),
+                    .alpha(skipButtonAlpha)
+                    .blur(90.dp),
                 shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF313131))
             ) {
@@ -78,22 +91,16 @@ fun LoginForm() {
                 .padding(30.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = stringResource(R.string.login_page_top_heading_one),
-                fontWeight = FontWeight.Bold,
-                fontSize = topHeadingFontSize,
-                color = Color.Black
+            HeadingText(
+                text = stringResource(R.string.login_page_top_heading_one)
             )
-            Text(
-                text = stringResource(R.string.login_page_top_heading_two),
-                fontWeight = FontWeight.Bold,
-                fontSize = topHeadingFontSize,
-                color = Color.Black
+            HeadingText(
+                text = stringResource(R.string.login_page_top_heading_two)
             )
 
             LoginTextDivider()
 
-            SelectCountryWithCountryCode()
+            SelectCountryWithCountryCode(navigator = navigator)
 
             Button(
                 onClick = { /*TODO*/ },
@@ -114,39 +121,17 @@ fun LoginForm() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center
             ) {
-                Button(
-                    onClick = { /*TODO*/ },
-                    shape = CircleShape,
-                    contentPadding = PaddingValues(5.dp),
-                    modifier = Modifier
-                        .padding(top = 5.dp, end = 15.dp)
-                        .size(height = iconsOutline, width = iconsOutline),
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
-                    border = BorderStroke(1.dp, Color.LightGray)
+                RoundButton(
+                    text = stringResource(R.string.google_logo),
+                    image = painterResource(id = R.drawable.google_logo)
                 ) {
-                    Icon(
-                        modifier = Modifier.size(height = iconsSize, width = iconsSize),
-                        painter = painterResource(id = R.drawable.google_logo),
-                        contentDescription = stringResource(R.string.google_logo),
-                        tint = Color.Black
-                    )
+                    /*TODO*/
                 }
-                Button(
-                    onClick = { /*TODO*/ },
-                    shape = CircleShape,
-                    contentPadding = PaddingValues(5.dp),
-                    modifier = Modifier
-                        .padding(top = 5.dp, start = 15.dp)
-                        .size(height = iconsOutline, width = iconsOutline),
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
-                    border = BorderStroke(1.dp, Color.LightGray)
+                RoundButton(
+                    text = stringResource(R.string.three_dots_logo),
+                    image = painterResource(id = R.drawable.ic_three_dots)
                 ) {
-                    Icon(
-                        modifier = Modifier.size(height = iconsSize, width = iconsSize),
-                        painter = painterResource(id = R.drawable.ic_three_dots),
-                        contentDescription = stringResource(R.string.three_dots_logo),
-                        tint = Color.DarkGray
-                    )
+                    /*TODO*/
                 }
             }
         }
@@ -158,7 +143,6 @@ fun LoginForm() {
 fun BottomInfoBar() {
     val fontSize = 11.sp
     val fontColor: Color = Color.Black
-    val textStyle = TextStyle(textDecoration = TextDecoration.Underline)
 
     Column(
         verticalArrangement = Arrangement.Center,
@@ -175,26 +159,9 @@ fun BottomInfoBar() {
         Row(
             horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = stringResource(R.string.terms_of_service),
-                style = textStyle,
-                color = fontColor,
-                fontSize = fontSize,
-                modifier = Modifier.padding(end = 5.dp)
-            )
-            Text(
-                text = stringResource(R.string.privacy_policy),
-                style = textStyle,
-                color = fontColor,
-                fontSize = fontSize,
-                modifier = Modifier.padding(end = 5.dp)
-            )
-            Text(
-                text = stringResource(R.string.content_policy),
-                style = textStyle,
-                color = fontColor,
-                fontSize = fontSize
-            )
+            UnderlinedText(text = stringResource(R.string.terms_of_service), onClick = {})
+            UnderlinedText(text = stringResource(R.string.privacy_policy), onClick = {})
+            UnderlinedText(text = stringResource(R.string.content_policy), onClick = {})
         }
     }
 }

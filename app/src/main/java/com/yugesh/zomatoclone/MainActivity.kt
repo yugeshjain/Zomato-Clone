@@ -10,7 +10,11 @@ import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import com.yugesh.zomatoclone.screens.loginScreen.LoginScreen
+import com.ramcosta.composedestinations.DestinationsNavHost
+import com.ramcosta.composedestinations.manualcomposablecalls.composable
+import com.yugesh.zomatoclone.screens.NavGraphs
+import com.yugesh.zomatoclone.screens.countryPicker.CountryPickerScreen
+import com.yugesh.zomatoclone.screens.destinations.CountryPickerScreenDestination
 import com.yugesh.zomatoclone.ui.theme.ZomatoCloneTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,12 +31,15 @@ class MainActivity : ComponentActivity() {
         }
         setContent {
             ZomatoCloneTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    LoginScreen()
+                    DestinationsNavHost(navGraph = NavGraphs.root) {
+                        composable(destination = CountryPickerScreenDestination){
+                            CountryPickerScreen(navigator = destinationsNavigator, pickedCountry = {})
+                        }
+                    }
                 }
             }
         }
