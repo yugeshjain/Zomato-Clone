@@ -1,14 +1,20 @@
 package com.yugesh.zomatoclone.screens.loginScreen
 
-import androidx.compose.foundation.BorderStroke
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,28 +23,37 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.R
-import com.yugesh.zomatoclone.screens.loginScreen.components.*
+import com.yugesh.zomatoclone.screens.destinations.HomeScreenDestination
+import com.yugesh.zomatoclone.screens.loginScreen.components.HeadingText
+import com.yugesh.zomatoclone.screens.loginScreen.components.LoginTextDivider
+import com.yugesh.zomatoclone.screens.loginScreen.components.OrTextDivider
+import com.yugesh.zomatoclone.screens.loginScreen.components.RoundButton
+import com.yugesh.zomatoclone.screens.loginScreen.components.UnderlinedText
 import com.yugesh.zomatoclone.screens.loginScreen.components.countryCodePicker.SelectCountryWithCountryCode
 
+@Destination(start = true)
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    navigator: DestinationsNavigator
+) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = { BottomInfoBar() }
     ) {
-        LoginForm()
+        LoginForm(navigator = navigator)
     }
 }
 
 @Composable
-fun LoginForm() {
+fun LoginForm(
+    navigator: DestinationsNavigator
+) {
 
     val skipButtonFontSize = 12.sp
     val skipButtonAlpha = 0.8f
@@ -56,7 +71,7 @@ fun LoginForm() {
             )
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { navigator.navigate(HomeScreenDestination) },
                 modifier = Modifier
                     .padding(30.dp)
                     .alpha(skipButtonAlpha)
@@ -85,7 +100,7 @@ fun LoginForm() {
 
             LoginTextDivider()
 
-            SelectCountryWithCountryCode()
+            SelectCountryWithCountryCode(navigator = navigator)
 
             Button(
                 onClick = { /*TODO*/ },

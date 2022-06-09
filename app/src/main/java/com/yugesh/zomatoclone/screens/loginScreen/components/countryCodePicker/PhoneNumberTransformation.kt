@@ -7,7 +7,7 @@ import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.text.input.VisualTransformation
 import com.google.i18n.phonenumbers.PhoneNumberUtil
-import java.util.*
+import java.util.Locale
 
 class PhoneNumberTransformation(countryCode: String = Locale.getDefault().country) :
     VisualTransformation {
