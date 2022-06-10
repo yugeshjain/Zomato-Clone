@@ -1,12 +1,10 @@
 package com.yugesh.zomatoclone.screens.homeScreen
 
 import android.annotation.SuppressLint
-import android.content.ClipData
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
@@ -15,8 +13,6 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.rememberNavController
@@ -54,30 +50,24 @@ fun HomeScreen(
         },
         bottomBar = { BottomNavBar(navController = navController, navigator = navigator) }
     ) {
-        LazyColumn(
+        Column(
             modifier = Modifier
+                .verticalScroll(state = rememberScrollState())
                 .fillMaxSize()
                 .background(Color.White)
-        ) {
-            item {
-                HomeScreenSearchTextField()
+                .padding(bottom = 45.dp),
+
+            ) {
+            HomeScreenSearchTextField()
+            FilterScrollableRow()
+            RestaurantsHomeScreenCircleLogoGrid()
+            FoodTypesHomeScreenCircleGrid("Eat What Makes You happy")
+            DropDownHomeScreenFoodGrid(
+                content = { FoodTypesHomeScreenCircleGrid() }
+            )
+            for (i in 1..99) {
+                Text(text = "i", fontSize = 25.sp, color = Color.Red)
             }
-            item {
-                FilterScrollableRow()
-            }
-//            item {
-//                val itemSize: Dp = (LocalConfiguration.current.screenWidthDp.dp / 4)
-//                RestaurantsHomeScreenCircleLogoGrid(itemSize)
-//            }
-//            item {
-//                val itemSize: Dp = (LocalConfiguration.current.screenWidthDp.dp / 3)
-//                FoodTypesHomeScreenCircleGrid()
-//            }
-//            item {
-//                for (i in 1..100) {
-//                    Text(text = "Text $i", fontSize = 25.sp, color = Color.Black)
-//                }
-//            }
         }
     }
 }

@@ -1,6 +1,9 @@
 package com.yugesh.zomatoclone.screens.homeScreen.components
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -12,8 +15,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
@@ -29,9 +34,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DropDownHomeScreenFoodGrid(
-    headingText: String,
     content: @Composable () -> Unit
 ) {
     var isOpen by remember {
@@ -45,14 +50,12 @@ fun DropDownHomeScreenFoodGrid(
         backgroundColor = Color.White,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp)
-            .border(BorderStroke(0.5.dp, Color.LightGray), shape = RoundedCornerShape(10.dp))
-//            .animateContentSize(
-//                animationSpec = tween(
-//                    durationMillis = 300,
-//                    easing = LinearOutSlowInEasing
-//                )
-//            )
+            .animateContentSize(
+                animationSpec = tween(
+                    durationMillis = 300,
+                    easing = LinearOutSlowInEasing
+                )
+            )
     ) {
         Column(
             modifier = Modifier
@@ -69,32 +72,34 @@ fun DropDownHomeScreenFoodGrid(
                     content()
                 }
             }
-            Row(
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .border(
-                        BorderStroke(0.dp, Color.LightGray),
-                        shape = RoundedCornerShape(6.dp)
-                    )
-                    .background(Color.LightGray)
+            Surface(
+                color = Color.White,
+                modifier = Modifier.padding(vertical = 5.dp, horizontal = 16.dp),
+                shape = RoundedCornerShape(10.dp),
+                border = BorderStroke(0.5.dp, Color.LightGray),
+                onClick = { isOpen = !isOpen }
             ) {
-                Text(
-                    text = headingText,
-                    color = Color.Black,
-                    fontSize = 14.sp,
-                    modifier = Modifier.padding(vertical = 5.dp)
-                )
-                IconButton(
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
-                        .rotate(alpha),
-                    onClick = {
-                        isOpen = !isOpen
-                    }) {
+                        .fillMaxWidth()
+                        .padding(vertical = 3.dp)
+                ) {
+                    Text(
+                        text = if (isOpen) {
+                            "see less"
+                        } else {
+                            "see more"
+                        },
+                        color = Color.DarkGray,
+                        fontSize = 14.sp
+                    )
                     Icon(
                         imageVector = Icons.Default.ArrowDropDown,
-                        contentDescription = "Drop-Down Arrow"
+                        contentDescription = "Drop-Down Arrow",
+                        tint = Color.DarkGray,
+                        modifier = Modifier.rotate(alpha)
                     )
                 }
             }
