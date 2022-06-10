@@ -103,7 +103,7 @@ fun LoginForm(
             SelectCountryWithCountryCode(navigator = navigator)
 
             Button(
-                onClick = { /*TODO*/ },
+                onClick = { navigator.navigate(HomeScreenDestination) },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(10.dp)
             ) {
