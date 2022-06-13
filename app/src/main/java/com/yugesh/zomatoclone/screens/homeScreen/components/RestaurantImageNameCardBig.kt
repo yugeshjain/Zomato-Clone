@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Divider
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -35,8 +36,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.R
+import com.yugesh.zomatoclone.screens.destinations.RestaurantScreenDestination
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RestaurantImageNameCardBig(
     @DrawableRes image: Int,
@@ -53,6 +57,7 @@ fun RestaurantImageNameCardBig(
     isPromoted: Boolean = false,
     isClosesSoon: Boolean = false,
     isRecycleFriendly: Boolean = false,
+    navigator: DestinationsNavigator
 ) {
     Card(
         shape = RoundedCornerShape(10.dp),
@@ -60,7 +65,22 @@ fun RestaurantImageNameCardBig(
         backgroundColor = Color.White,
         modifier = Modifier
             .width(LocalConfiguration.current.screenWidthDp.dp)
-            .padding(vertical = 6.dp, horizontal = 16.dp)
+            .padding(vertical = 6.dp, horizontal = 16.dp),
+        onClick = {
+            navigator.navigate(
+                RestaurantScreenDestination(
+                    offerPercentageText,
+                    offerUpToText,
+                    restaurantName,
+                    restaurantType,
+                    "Chandigarh",
+                    deliveryDistanceInKms,
+                    isMultipleLocations = true,
+                    deliveryTimeInMins,
+                    ratingText
+                )
+            )
+        }
     ) {
         Column {
             ImageBigCard(
@@ -110,7 +130,7 @@ fun ImageBigCard(
     ) {
         Image(
             painter = painterResource(id = image),
-            contentDescription = stringResource(R.string.resturant_image)
+            contentDescription = stringResource(R.string.restaurant_image)
         )
 
         Column {
@@ -226,7 +246,7 @@ fun ImageBigCard(
                                     modifier = Modifier.padding(start = 2.dp)
                                 )
                                 Text(
-                                    text = "Up tp ₹${offerUpToText.toString()}",
+                                    text = "Up to ₹${offerUpToText.toString()}",
                                     color = Color.White,
                                     fontSize = 12.sp,
                                     fontWeight = FontWeight.SemiBold,

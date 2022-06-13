@@ -1,8 +1,9 @@
-package com.yugesh.zomatoclone.screens.homeScreen.components
+package com.yugesh.zomatoclone.screens.diningScreen.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,13 +17,13 @@ import com.yugesh.zomatoclone.screens.commonComponents.LHG
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun FoodTypesHomeScreenCircleGrid(
+fun DiningScreenFilterGrid(
     text: String? = null
 ) {
     Column(
         modifier = Modifier.padding(end = 16.dp, start = 10.dp)
     ) {
-        if (text != null){
+        if (text != null) {
             Text(
                 text = text,
                 color = Color.Black,
@@ -33,61 +34,62 @@ fun FoodTypesHomeScreenCircleGrid(
         }
         LHG(
             cells = GridCells.Fixed(count = 2),
-            count = 2
+            count = 2,
+            state = LazyListState()
         ) {
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Thali",
-                    iconId = R.drawable.thali,
+                DiningScreenGridCard(
+                    title = "Outdoor",
+                    iconId = R.drawable.outdoor_png,
                     onCLick = {}
                 )
             }
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Pizza",
-                    iconId = R.drawable.pizza,
+                DiningScreenGridCard(
+                    title = "Premium",
+                    iconId = R.drawable.premium_png,
                     onCLick = {}
                 )
             }
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Healthy",
-                    iconId = R.drawable.salad,
+                DiningScreenGridCard(
+                    title = "Events",
+                    iconId = R.drawable.events_png,
                     onCLick = {}
                 )
             }
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Rolls",
-                    iconId = R.drawable.rolls,
+                DiningScreenGridCard(
+                    title = "Cafe",
+                    iconId = R.drawable.cafe_png,
                     onCLick = {}
                 )
             }
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Burger",
-                    iconId = R.drawable.burger,
+                DiningScreenGridCard(
+                    title = "Romantic",
+                    iconId = R.drawable.romantic_png,
                     onCLick = {}
                 )
             }
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Biryani",
-                    iconId = R.drawable.biryani_veg,
+                DiningScreenGridCard(
+                    title = "Pubs & Bars",
+                    iconId = R.drawable.pubs_and_bars_png,
                     onCLick = {}
                 )
             }
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Paratha",
-                    iconId = R.drawable.paratha,
+                DiningScreenGridCard(
+                    title = "Family Dining",
+                    iconId = R.drawable.family_dining_png,
                     onCLick = {}
                 )
             }
             items(1) {
-                HomePageFoodsGridItem(
-                    title = "Chaat",
-                    iconId = R.drawable.chaat,
+                DiningScreenGridCard(
+                    title = "Buffet",
+                    iconId = R.drawable.buffet_png,
                     onCLick = {}
                 )
             }

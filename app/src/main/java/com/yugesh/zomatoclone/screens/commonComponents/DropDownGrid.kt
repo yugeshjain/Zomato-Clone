@@ -1,4 +1,4 @@
-package com.yugesh.zomatoclone.screens.homeScreen.components
+package com.yugesh.zomatoclone.screens.commonComponents
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun DropDownHomeScreenFoodGrid(
+fun DropDownGrid(
     content: @Composable () -> Unit
 ) {
     var isOpen by remember {

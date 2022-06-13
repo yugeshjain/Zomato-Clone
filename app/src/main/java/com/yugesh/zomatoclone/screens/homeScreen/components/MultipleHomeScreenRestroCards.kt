@@ -9,10 +9,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.R
 
 @Composable
-fun MultipleHomeScreenRestroCards(noOfRestaurantsAround: Int) {
+fun MultipleHomeScreenRestroCards(noOfRestaurantsAround: Int, navigator: DestinationsNavigator) {
     Column {
         Text(
             text = "$noOfRestaurantsAround restaurants around you",
@@ -35,7 +36,8 @@ fun MultipleHomeScreenRestroCards(noOfRestaurantsAround: Int) {
             isPureVegetarian = true,
             isPromoted = true,
             isClosesSoon = true,
-            isRecycleFriendly = true
+            isRecycleFriendly = true,
+            navigator = navigator
         )
         RestaurantImageNameCardBig(
             image = R.drawable.food,
@@ -51,7 +53,8 @@ fun MultipleHomeScreenRestroCards(noOfRestaurantsAround: Int) {
             isPureVegetarian = true,
             isPromoted = true,
             isClosesSoon = true,
-            isRecycleFriendly = true
+            isRecycleFriendly = true,
+            navigator = navigator
         )
         RestaurantImageNameCardBig(
             image = R.drawable.food,
@@ -67,7 +70,8 @@ fun MultipleHomeScreenRestroCards(noOfRestaurantsAround: Int) {
             isPureVegetarian = true,
             isPromoted = true,
             isClosesSoon = true,
-            isRecycleFriendly = true
+            isRecycleFriendly = true,
+            navigator = navigator
         )
         RestaurantImageNameCardBig(
             image = R.drawable.food,
@@ -83,7 +87,8 @@ fun MultipleHomeScreenRestroCards(noOfRestaurantsAround: Int) {
             isPureVegetarian = true,
             isPromoted = true,
             isClosesSoon = true,
-            isRecycleFriendly = true
+            isRecycleFriendly = true,
+            navigator = navigator
         )
     }
 }

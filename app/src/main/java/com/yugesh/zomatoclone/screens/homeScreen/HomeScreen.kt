@@ -17,10 +17,10 @@ import androidx.navigation.compose.rememberNavController
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.screens.bottomNavBar.BottomNavBar
-import com.yugesh.zomatoclone.screens.homeScreen.components.DropDownHomeScreenFoodGrid
-import com.yugesh.zomatoclone.screens.homeScreen.components.FilterScrollableRow
+import com.yugesh.zomatoclone.screens.commonComponents.DropDownGrid
+import com.yugesh.zomatoclone.screens.homeScreen.components.HomeScreenFilterItemRow
 import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
-import com.yugesh.zomatoclone.screens.homeScreen.components.HomeScreenSearchTextField
+import com.yugesh.zomatoclone.screens.commonComponents.AppMainSearchTextField
 import com.yugesh.zomatoclone.screens.homeScreen.components.MultipleHomeScreenRestroCards
 import com.yugesh.zomatoclone.screens.homeScreen.components.RestaurantsHomeScreenCircleLogoGrid
 import com.yugesh.zomatoclone.screens.homeScreen.components.TopAppBarComposable
@@ -57,14 +57,14 @@ fun HomeScreen(
                 .padding(bottom = 45.dp),
 
             ) {
-            HomeScreenSearchTextField()
-            FilterScrollableRow()
+            AppMainSearchTextField()
+            HomeScreenFilterItemRow()
             RestaurantsHomeScreenCircleLogoGrid()
             FoodTypesHomeScreenCircleGrid("Eat What Makes You happy")
-            DropDownHomeScreenFoodGrid(
+            DropDownGrid(
                 content = { FoodTypesHomeScreenCircleGrid() }
             )
-            MultipleHomeScreenRestroCards(noOfRestaurantsAround = 123)
+            MultipleHomeScreenRestroCards(noOfRestaurantsAround = 123, navigator = navigator)
         }
     }
 }
