@@ -5,6 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -15,8 +17,11 @@ import androidx.navigation.compose.rememberNavController
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.screens.bottomNavBar.BottomNavBar
-import com.yugesh.zomatoclone.screens.homeScreen.components.FilterScrollableRow
-import com.yugesh.zomatoclone.screens.homeScreen.components.HomeScreenSearchTextField
+import com.yugesh.zomatoclone.screens.commonComponents.DropDownGrid
+import com.yugesh.zomatoclone.screens.homeScreen.components.HomeScreenFilterItemRow
+import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
+import com.yugesh.zomatoclone.screens.commonComponents.AppMainSearchTextField
+import com.yugesh.zomatoclone.screens.homeScreen.components.MultipleHomeScreenRestroCards
 import com.yugesh.zomatoclone.screens.homeScreen.components.RestaurantsHomeScreenCircleLogoGrid
 import com.yugesh.zomatoclone.screens.homeScreen.components.TopAppBarComposable
 
@@ -35,7 +40,7 @@ fun HomeScreen(
         topBar = {
             TopAppBar(
                 modifier = Modifier
-                    .padding(top = 35.dp),
+                    .padding(top = 45.dp),
                 elevation = 0.dp,
                 backgroundColor = Color.White
             ) {
@@ -46,12 +51,20 @@ fun HomeScreen(
     ) {
         Column(
             modifier = Modifier
+                .verticalScroll(state = rememberScrollState())
                 .fillMaxSize()
                 .background(Color.White)
-        ) {
-            HomeScreenSearchTextField()
-            FilterScrollableRow()
+                .padding(bottom = 45.dp),
+
+            ) {
+            AppMainSearchTextField()
+            HomeScreenFilterItemRow()
             RestaurantsHomeScreenCircleLogoGrid()
+            FoodTypesHomeScreenCircleGrid("Eat What Makes You happy")
+            DropDownGrid(
+                content = { FoodTypesHomeScreenCircleGrid() }
+            )
+            MultipleHomeScreenRestroCards(noOfRestaurantsAround = 123, navigator = navigator)
         }
     }
 }

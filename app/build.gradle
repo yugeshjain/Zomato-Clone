@@ -72,11 +72,13 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
-
-
+    
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.12.48'
     implementation 'androidx.core:core-splashscreen:1.0.0-alpha02'
+
     implementation "com.google.accompanist:accompanist-insets:0.14.0"
+    implementation "com.google.accompanist:accompanist-flowlayout:0.14.0"
+
 
     //Compose Destinations
     implementation 'io.github.raamcosta.compose-destinations:core:1.5.9-beta'

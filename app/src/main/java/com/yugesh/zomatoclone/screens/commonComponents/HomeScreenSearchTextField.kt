@@ -1,4 +1,4 @@
-package com.yugesh.zomatoclone.screens.homeScreen.components
+package com.yugesh.zomatoclone.screens.commonComponents
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
@@ -16,7 +16,7 @@ import com.yugesh.zomatoclone.screens.countryPicker.components.SearchTextField
 import com.yugesh.zomatoclone.ui.theme.PrimeOne
 
 @Composable
-fun HomeScreenSearchTextField() {
+fun AppMainSearchTextField() {
     var textValue by remember { mutableStateOf("") }
 
     SearchTextField(

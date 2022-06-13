@@ -1,9 +1,10 @@
 package com.yugesh.zomatoclone.screens.homeScreen.components
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,24 +13,31 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yugesh.zomatoclone.R
+import com.yugesh.zomatoclone.screens.commonComponents.LHG
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun RestaurantsHomeScreenCircleLogoGrid() {
+fun RestaurantsHomeScreenCircleLogoGrid(
+
+) {
     Column(
-        modifier = Modifier.padding(end = 16.dp, start = 10.dp)
+        modifier = Modifier
+            .padding(end = 16.dp, start = 10.dp)
+            .fillMaxWidth()
     ) {
         Text(
             text = "Top Brands for you",
             color = Color.Black,
-            fontWeight = FontWeight.ExtraBold,
+            fontWeight = FontWeight.Bold,
             fontSize = 20.sp,
             modifier = Modifier.padding(start = 5.dp, bottom = 12.dp)
         )
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(count = 4)
+        LHG(
+            cells = GridCells.Fixed(count = 2),
+            count = 2
         ) {
             items(1) {
-                HomePageGridItem(
+                HomePageTopBrandGridItem(
                     title = "Haldiram's",
                     iconId = R.drawable.haldirams_logo,
                     onCLick = {},
@@ -39,7 +47,7 @@ fun RestaurantsHomeScreenCircleLogoGrid() {
                 )
             }
             items(1) {
-                HomePageGridItem(
+                HomePageTopBrandGridItem(
                     title = "McDonald's",
                     iconId = R.drawable.mcdonalds_logo,
                     onCLick = {},
@@ -49,8 +57,8 @@ fun RestaurantsHomeScreenCircleLogoGrid() {
                 )
             }
             items(1) {
-                HomePageGridItem(
-                    title = "Receive",
+                HomePageTopBrandGridItem(
+                    title = "KFC",
                     iconId = R.drawable.kfc_logo,
                     onCLick = {},
                     timeOfArrival = "65 mins",
@@ -58,7 +66,7 @@ fun RestaurantsHomeScreenCircleLogoGrid() {
                 )
             }
             items(1) {
-                HomePageGridItem(
+                HomePageTopBrandGridItem(
                     title = "Burger King",
                     iconId = R.drawable.burger_king_logo,
                     onCLick = {},
@@ -68,7 +76,7 @@ fun RestaurantsHomeScreenCircleLogoGrid() {
                 )
             }
             items(1) {
-                HomePageGridItem(
+                HomePageTopBrandGridItem(
                     title = "Pizza Hut",
                     iconId = R.drawable.pizza_hut_logo,
                     onCLick = {},
@@ -78,7 +86,7 @@ fun RestaurantsHomeScreenCircleLogoGrid() {
                 )
             }
             items(1) {
-                HomePageGridItem(
+                HomePageTopBrandGridItem(
                     title = "Burgito's",
                     iconId = R.drawable.burgitos_logo,
                     onCLick = {},
@@ -87,7 +95,7 @@ fun RestaurantsHomeScreenCircleLogoGrid() {
                 )
             }
             items(1) {
-                HomePageGridItem(
+                HomePageTopBrandGridItem(
                     title = "Tim Hortons",
                     iconId = R.drawable.tim_hortons_logo,
                     onCLick = {},
@@ -97,7 +105,7 @@ fun RestaurantsHomeScreenCircleLogoGrid() {
                 )
             }
             items(1) {
-                HomePageGridItem(
+                HomePageTopBrandGridItem(
                     title = "Wendy's",
                     iconId = R.drawable.wendys_logo,
                     onCLick = {},

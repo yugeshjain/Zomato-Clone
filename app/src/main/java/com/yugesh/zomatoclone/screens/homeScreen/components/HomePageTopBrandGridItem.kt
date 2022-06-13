@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
@@ -20,16 +22,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yugesh.zomatoclone.R
 
 @Composable
-fun HomePageGridItem(
+fun HomePageTopBrandGridItem(
     @DrawableRes iconId: Int,
     title: String,
     timeOfArrival: String,
@@ -39,7 +43,8 @@ fun HomePageGridItem(
 ) {
     Box(
         modifier = Modifier
-            .fillMaxWidth()
+            .width((LocalConfiguration.current.screenWidthDp / 4.25).dp)
+            .fillMaxHeight()
             .padding(top = 5.dp, start = 6.dp)
             .clickable { onCLick }
     ) {
@@ -53,7 +58,6 @@ fun HomePageGridItem(
                 Column {
                     Box(
                         modifier = Modifier
-                            .fillMaxHeight(0.95f)
                             .align(Alignment.CenterHorizontally),
                         contentAlignment = Alignment.BottomCenter
                     ) {
@@ -71,15 +75,14 @@ fun HomePageGridItem(
 
                         if (discount != null) {
                             Card(
-                                modifier = Modifier.padding(top = 15.dp),
                                 backgroundColor = Color(0xFF2748FF)
                             ) {
                                 Text(
                                     text = discount,
                                     color = Color.White,
                                     modifier = Modifier.padding(
-                                        horizontal = 10.dp,
-                                        vertical = 5.dp
+                                        horizontal = 8.dp,
+                                        vertical = 2.dp
                                     ),
                                     fontSize = 12.sp,
                                     fontWeight = FontWeight.Bold
@@ -90,7 +93,7 @@ fun HomePageGridItem(
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(8.dp),
+                            .padding(vertical = 8.dp, horizontal = 2.dp),
                         contentAlignment = Alignment.BottomCenter
                     ) {
                         Column(
@@ -98,11 +101,12 @@ fun HomePageGridItem(
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Text(
-                                title,
+                                text = title,
                                 style = TextStyle(
                                     color = Color.Black
                                 ),
-                                textAlign = TextAlign.Center
+                                textAlign = TextAlign.Center,
+                                fontWeight = FontWeight.Bold
                             )
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,

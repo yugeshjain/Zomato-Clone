@@ -1,4 +1,4 @@
-package com.yugesh.zomatoclone.screens.homeScreen.components
+package com.yugesh.zomatoclone.screens.diningScreen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.yugesh.zomatoclone.screens.commonComponents.FilterRowCard
 
 @Composable
-fun HomeScreenFilterItemRow() {
+fun DiningScreenFilterItemRow() {
     var selectedChipIndex by remember {
         mutableStateOf(1)
     }
@@ -30,7 +30,7 @@ fun HomeScreenFilterItemRow() {
         ) {
             items(1) {
                 FilterRowCard(
-                    text = "Sort",
+                    text = "Relevance",
                     leadingIcon = Icons.Default.Info,
                     trailingIcon = Icons.Filled.ArrowDropDown,
                     int = 1,
@@ -40,7 +40,7 @@ fun HomeScreenFilterItemRow() {
             }
             items(1) {
                 FilterRowCard(
-                    text = "Fast Delivery",
+                    text = "MAX Safety",
                     int = 2,
                     test = selectedChipIndex,
                     onClick = { selectedChipIndex = 2 }
@@ -48,7 +48,7 @@ fun HomeScreenFilterItemRow() {
             }
             items(1) {
                 FilterRowCard(
-                    text = "Pure Veg",
+                    text = "Nearest",
                     int = 3,
                     test = selectedChipIndex,
                     onClick = { selectedChipIndex = 3 }
@@ -56,18 +56,10 @@ fun HomeScreenFilterItemRow() {
             }
             items(1) {
                 FilterRowCard(
-                    text = "Rating 4.0+",
+                    text = "Book Table",
                     int = 4,
                     test = selectedChipIndex,
                     onClick = { selectedChipIndex = 4 }
-                )
-            }
-            items(1) {
-                FilterRowCard(
-                    text = "MAX Safety",
-                    int = 5,
-                    test = selectedChipIndex,
-                    onClick = { selectedChipIndex = 5 }
                 )
             }
             items(1) {
@@ -81,7 +73,31 @@ fun HomeScreenFilterItemRow() {
             }
             items(1) {
                 FilterRowCard(
-                    text = "New Arrivals",
+                    text = "Outdoor Seating",
+                    int = 5,
+                    test = selectedChipIndex,
+                    onClick = { selectedChipIndex = 5 }
+                )
+            }
+            items(1) {
+                FilterRowCard(
+                    text = "Serves Alcohol",
+                    int = 5,
+                    test = selectedChipIndex,
+                    onClick = { selectedChipIndex = 5 }
+                )
+            }
+            items(1) {
+                FilterRowCard(
+                    text = "Pure Veg",
+                    int = 5,
+                    test = selectedChipIndex,
+                    onClick = { selectedChipIndex = 5 }
+                )
+            }
+            items(1) {
+                FilterRowCard(
+                    text = "Open Now",
                     int = 5,
                     test = selectedChipIndex,
                     onClick = { selectedChipIndex = 5 }
