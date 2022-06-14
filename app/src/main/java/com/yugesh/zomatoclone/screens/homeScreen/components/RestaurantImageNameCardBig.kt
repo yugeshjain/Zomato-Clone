@@ -38,6 +38,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.R
+import com.yugesh.zomatoclone.screens.commonComponents.blueColor
+import com.yugesh.zomatoclone.screens.commonComponents.greenColor
+import com.yugesh.zomatoclone.screens.commonComponents.redColor
 import com.yugesh.zomatoclone.screens.destinations.RestaurantScreenDestination
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -77,6 +80,7 @@ fun RestaurantImageNameCardBig(
                     deliveryDistanceInKms,
                     isMultipleLocations = true,
                     deliveryTimeInMins,
+                    isPureVegetarian,
                     ratingText
                 )
             )
@@ -118,8 +122,7 @@ fun ImageBigCard(
     var isFavourite by remember {
         mutableStateOf(false)
     }
-    val greenColor = Color(0xFF388D3C)
-    val blueColor = Color(0xFF6078FF)
+
 
     Box(
         contentAlignment = Alignment.TopCenter,
@@ -295,8 +298,6 @@ fun ContentBigCard(
     isClosesSoon: Boolean = false,
     isRecycleFriendly: Boolean = false
 ) {
-    val redColor = Color(0xFFF80707)
-
     Column(
         modifier = Modifier.padding(10.dp)
     ) {
@@ -335,7 +336,7 @@ fun ContentBigCard(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(6.dp))
-                        .background(Color(0xFF388D3C))
+                        .background(greenColor)
                 ) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -383,7 +384,7 @@ fun ContentBigCard(
                 Icon(
                     painter = painterResource(id = R.drawable.leaf_vector),
                     contentDescription = stringResource(R.string.recycle),
-                    tint = Color(0xFF388D3C),
+                    tint = greenColor,
                     modifier = Modifier.size(15.dp)
                 )
                 Text(

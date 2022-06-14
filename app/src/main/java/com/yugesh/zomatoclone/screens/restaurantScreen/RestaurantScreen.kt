@@ -16,7 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenBottomBar
+import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenCategoryDropDown
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenFAB
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenInfoSection
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenOfferScrollableRow
@@ -35,7 +37,8 @@ fun RestaurantScreen(
     deliveryDistanceInKms: Int,
     isMultipleLocations: Boolean = false,
     deliveryTimeInMins: Int,
-    ratingText: Float?,
+    isPureVegetarian: Boolean = false,
+    ratingText: Float?
 ) {
     Scaffold(
         backgroundColor = Color(0xFFEEEEEE),
@@ -62,7 +65,6 @@ fun RestaurantScreen(
             modifier = Modifier
                 .verticalScroll(state = rememberScrollState())
                 .fillMaxSize()
-                .background(Color.White)
         ) {
             RestaurantScreenInfoSection(
                 restaurantName,
@@ -74,7 +76,9 @@ fun RestaurantScreen(
                 ratingText
             )
             RestaurantScreenOfferScrollableRow()
-            SwitchButtonsRow()
+            SwitchButtonsRow(isPureVegetarian)
+            RestaurantScreenCategoryDropDown({FoodTypesHomeScreenCircleGrid()}, "Recommended", 35)
+            RestaurantScreenCategoryDropDown({FoodTypesHomeScreenCircleGrid()}, "Recommended", 35)
         }
     }
 }

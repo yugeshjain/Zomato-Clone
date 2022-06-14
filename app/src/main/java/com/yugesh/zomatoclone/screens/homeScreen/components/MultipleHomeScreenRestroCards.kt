@@ -50,7 +50,7 @@ fun MultipleHomeScreenRestroCards(noOfRestaurantsAround: Int, navigator: Destina
             restaurantType = "North Indian, Rajasthani",
             closingSoonTimeInMins = 50,
             costForTwoInINR = 250,
-            isPureVegetarian = true,
+            isPureVegetarian = false,
             isPromoted = true,
             isClosesSoon = true,
             isRecycleFriendly = true,
