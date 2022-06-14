@@ -25,7 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yugesh.zomatoclone.R
-import com.yugesh.zomatoclone.screens.commonComponents.greenColor
+import com.yugesh.zomatoclone.screens.commonComponents.zGreenColor
 
 @Composable
 fun SwitchButtonsRow(
@@ -45,7 +45,7 @@ fun SwitchButtonsRow(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(6.dp))
-                        .background(greenColor)
+                        .background(zGreenColor)
                 ) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,

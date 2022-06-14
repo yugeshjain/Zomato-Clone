@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
+import com.yugesh.zomatoclone.screens.restaurantScreen.components.DropDownList
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenBottomBar
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenCategoryDropDown
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenFAB
@@ -77,8 +78,12 @@ fun RestaurantScreen(
             )
             RestaurantScreenOfferScrollableRow()
             SwitchButtonsRow(isPureVegetarian)
-            RestaurantScreenCategoryDropDown({FoodTypesHomeScreenCircleGrid()}, "Recommended", 35)
-            RestaurantScreenCategoryDropDown({FoodTypesHomeScreenCircleGrid()}, "Recommended", 35)
+            RestaurantScreenCategoryDropDown({DropDownList()}, "Recommended", 18)
+            RestaurantScreenCategoryDropDown({DropDownList()}, "Combos", 9)
+            RestaurantScreenCategoryDropDown({DropDownList()}, "Meals", 10)
+            RestaurantScreenCategoryDropDown({DropDownList()}, "Thali", 3)
+            RestaurantScreenCategoryDropDown({DropDownList()}, "Main Course", 51)
+            RestaurantScreenCategoryDropDown({DropDownList()}, "Starters", 14)
         }
     }
 }

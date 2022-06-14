@@ -18,10 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.yugesh.zomatoclone.screens.commonComponents.zLightGreyBorder
 
 @Composable
 fun RestaurantScreenTopAppBar() {
-    val iconBorderColor = Color(0xFFEEEEEE)
     val iconPadding: Dp = 5.dp
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -37,7 +37,7 @@ fun RestaurantScreenTopAppBar() {
         ) {
             Card(
                 backgroundColor = Color.White,
-                border = BorderStroke(0.5.dp, iconBorderColor),
+                border = BorderStroke(0.5.dp, zLightGreyBorder),
                 elevation = 0.dp,
                 shape = CircleShape
             ) {
@@ -50,7 +50,7 @@ fun RestaurantScreenTopAppBar() {
             }
             Card(
                 backgroundColor = Color.White,
-                border = BorderStroke(0.5.dp, iconBorderColor),
+                border = BorderStroke(0.5.dp, zLightGreyBorder),
                 elevation = 0.dp,
                 shape = CircleShape,
                 modifier = Modifier.padding(start = 6.dp)

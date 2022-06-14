@@ -4,14 +4,12 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
@@ -40,7 +38,7 @@ fun RestaurantScreenCategoryDropDown(
     itemsInList: Int
 ) {
     var isOpen by remember {
-        mutableStateOf(false)
+        mutableStateOf(true)
     }
     val alpha by animateFloatAsState(
         targetValue = if (isOpen) 180f else 0f
@@ -55,6 +53,7 @@ fun RestaurantScreenCategoryDropDown(
                 animationSpec = tween(
                     durationMillis = 300,
                     easing = LinearOutSlowInEasing
+
                 )
             )
     ) {
