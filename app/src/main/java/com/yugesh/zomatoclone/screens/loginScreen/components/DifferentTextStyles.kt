@@ -41,6 +41,6 @@ fun UnderlinedText(
         fontSize = fontSize.sp,
         modifier = Modifier
             .padding(end = 5.dp)
-            .clickable { onClick }
+            .clickable { onClick() }
     )
 }

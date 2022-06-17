@@ -1,22 +1,19 @@
 package com.yugesh.zomatoclone.screens.restaurantScreen
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.FabPosition
-import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
+import com.yugesh.zomatoclone.screens.commonComponents.zSystemTopAppBarBgColor
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.DropDownList
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenBottomBar
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenCategoryDropDown
@@ -42,7 +39,7 @@ fun RestaurantScreen(
     ratingText: Float?
 ) {
     Scaffold(
-        backgroundColor = Color(0xFFEEEEEE),
+        backgroundColor = zSystemTopAppBarBgColor,
         bottomBar = {
             RestaurantScreenBottomBar(
                 offerPercentageText = offerPercentageText,
@@ -54,7 +51,7 @@ fun RestaurantScreen(
         topBar = {
             TopAppBar(
                 modifier = Modifier
-                    .padding(top = 45.dp),
+                    .statusBarsPadding(),
                 elevation = 0.dp,
                 backgroundColor = Color.White
             ) {
@@ -78,12 +75,11 @@ fun RestaurantScreen(
             )
             RestaurantScreenOfferScrollableRow()
             SwitchButtonsRow(isPureVegetarian)
-            RestaurantScreenCategoryDropDown({DropDownList()}, "Recommended", 18)
-            RestaurantScreenCategoryDropDown({DropDownList()}, "Combos", 9)
-            RestaurantScreenCategoryDropDown({DropDownList()}, "Meals", 10)
-            RestaurantScreenCategoryDropDown({DropDownList()}, "Thali", 3)
-            RestaurantScreenCategoryDropDown({DropDownList()}, "Main Course", 51)
-            RestaurantScreenCategoryDropDown({DropDownList()}, "Starters", 14)
+            RestaurantScreenCategoryDropDown({ DropDownList() }, "Recommended", 18)
+            RestaurantScreenCategoryDropDown({ DropDownList() }, "Combos", 9)
+            RestaurantScreenCategoryDropDown({ DropDownList() }, "Meals", 10)
+            RestaurantScreenCategoryDropDown({ DropDownList() }, "Main Course", 51)
+            RestaurantScreenCategoryDropDown({ DropDownList() }, "Starters", 14)
         }
     }
 }

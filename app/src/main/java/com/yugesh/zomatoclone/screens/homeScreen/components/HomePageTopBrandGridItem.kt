@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
@@ -27,7 +26,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yugesh.zomatoclone.R
@@ -46,7 +44,7 @@ fun HomePageTopBrandGridItem(
             .width((LocalConfiguration.current.screenWidthDp / 4.25).dp)
             .fillMaxHeight()
             .padding(top = 5.dp, start = 6.dp)
-            .clickable { onCLick }
+            .clickable { onCLick() }
     ) {
         Card(
             modifier = Modifier

@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import com.yugesh.zomatoclone.screens.commonComponents.zSearchBarBgColor
 
 @Composable
 fun SearchTextField(
@@ -33,7 +34,7 @@ fun SearchTextField(
     borderStrokeColor: Color = Color.LightGray,
     placeholder: String
 ) {
-    val bgColor = Color(0xFFEEEEEE)
+    val bgColor = zSearchBarBgColor
     Surface(
         color = bgColor,
         modifier = Modifier.padding(vertical = 5.dp, horizontal = 16.dp),

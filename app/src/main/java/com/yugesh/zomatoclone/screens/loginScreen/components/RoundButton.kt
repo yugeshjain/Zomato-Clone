@@ -25,7 +25,7 @@ fun RoundButton(
 ) {
 
     Button(
-        onClick = { onClick },
+        onClick = { onClick() },
         shape = CircleShape,
         contentPadding = PaddingValues(5.dp),
         modifier = Modifier

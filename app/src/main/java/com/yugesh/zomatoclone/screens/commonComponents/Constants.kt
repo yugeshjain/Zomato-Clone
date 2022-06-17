@@ -21,6 +21,8 @@ val zLikeButtonColor = Color(0xFFD6656A)
 val zItemAddButtonBg = Color(0xFFFCF7F7)
 val zVegIconColor = Color(0xFF65BB63)
 val zNonVegIconColor = Color(0xFFBD5549)
+val zSystemTopAppBarBgColor = Color(0xFFF8F8F8)
+val zSearchBarBgColor = Color(0xFFF5F5F5)
 
 //String Constants
 const val zRupeeSign: String = "₹"

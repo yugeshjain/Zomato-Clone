@@ -3,7 +3,6 @@ package com.yugesh.zomatoclone.screens.restaurantScreen.components
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,11 +12,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.Divider
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
@@ -34,7 +30,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.TextToolbar
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -46,7 +41,6 @@ import com.yugesh.zomatoclone.screens.commonComponents.zDarkGray
 import com.yugesh.zomatoclone.screens.commonComponents.zDishLabelBg
 import com.yugesh.zomatoclone.screens.commonComponents.zDishLabelTextColor
 import com.yugesh.zomatoclone.screens.commonComponents.zItemAddButtonBg
-import com.yugesh.zomatoclone.screens.commonComponents.zLightGray
 import com.yugesh.zomatoclone.screens.commonComponents.zNonVegIconColor
 import com.yugesh.zomatoclone.screens.commonComponents.zRatingCardYellowBg
 import com.yugesh.zomatoclone.screens.commonComponents.zRatingCardYellowBorder
