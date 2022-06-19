@@ -14,6 +14,5 @@ enum class BottomBarNav(
     @StringRes val label: Int
 ) {
     Home(HomeScreenDestination, R.drawable.delivery_bottom_nav, R.string.delivery_bottom_nav),
-    Dining(DiningScreenDestination, R.drawable.local_dining_bottom_nav, R.string.dining_bottom_nav),
-    ZPL(ZplScreenDestination, R.drawable.zpl_bottom_nav, R.string.zpl_bottom_nav)
+    Dining(DiningScreenDestination, R.drawable.local_dining_bottom_nav, R.string.dining_bottom_nav)
 }

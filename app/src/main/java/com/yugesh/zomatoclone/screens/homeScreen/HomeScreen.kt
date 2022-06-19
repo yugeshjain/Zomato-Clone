@@ -56,7 +56,6 @@ fun HomeScreen(
                 .fillMaxSize()
                 .background(Color.White)
                 .padding(bottom = 45.dp),
-
             ) {
             AppMainSearchTextField()
             HomeScreenFilterItemRow()
