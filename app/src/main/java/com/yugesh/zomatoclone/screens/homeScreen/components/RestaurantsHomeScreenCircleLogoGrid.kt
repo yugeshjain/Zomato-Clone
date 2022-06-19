@@ -8,8 +8,13 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
+import androidx.compose.ui.input.nestedscroll.NestedScrollSource
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yugesh.zomatoclone.R
@@ -17,9 +22,7 @@ import com.yugesh.zomatoclone.screens.commonComponents.LHG
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun RestaurantsHomeScreenCircleLogoGrid(
-
-) {
+fun RestaurantsHomeScreenCircleLogoGrid() {
     Column(
         modifier = Modifier
             .padding(end = 16.dp, start = 10.dp)
@@ -34,7 +37,8 @@ fun RestaurantsHomeScreenCircleLogoGrid(
         )
         LHG(
             cells = GridCells.Fixed(count = 2),
-            count = 2
+            count = 2,
+            modifier = Modifier.disabledHorizontalPointerInputScroll()
         ) {
             items(1) {
                 HomePageTopBrandGridItem(
@@ -117,3 +121,11 @@ fun RestaurantsHomeScreenCircleLogoGrid(
         }
     }
 }
+
+private val HorizontalScrollConsumer = object : NestedScrollConnection {
+    override fun onPreScroll(available: Offset, source: NestedScrollSource) = available.copy(y = 0f)
+    override suspend fun onPreFling(available: Velocity) = available.copy(y = 0f)
+}
+
+fun Modifier.disabledHorizontalPointerInputScroll(disabled: Boolean = true) =
+    if (disabled) this.nestedScroll(HorizontalScrollConsumer) else this

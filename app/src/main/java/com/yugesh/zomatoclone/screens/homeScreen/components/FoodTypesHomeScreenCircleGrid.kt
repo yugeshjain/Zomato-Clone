@@ -33,7 +33,8 @@ fun FoodTypesHomeScreenCircleGrid(
         }
         LHG(
             cells = GridCells.Fixed(count = 2),
-            count = 2
+            count = 2,
+            modifier = Modifier.disabledHorizontalPointerInputScroll()
         ) {
             items(1) {
                 HomePageFoodsGridItem(

@@ -13,7 +13,8 @@ val PrimeThree = Color(0xFF2D2D2D)
 
 //App Colors
 val zGreenColor = Color(0xFF489547)
-val zBlueColor = Color(0xFF6078FF)
+//val zBlueColor = Color(0xFF6078FF)
+val zBlueColor = Color(0xFF416CE9)
 val zRedColor = Color(0xFFF80707)
 val zSelectedFilterRowItemBg = Color(0xFFFFEBEB)
 val zWhite = Color(0xFFFFFFFF)

@@ -64,7 +64,7 @@ fun RestaurantImageNameCardBig(
     navigator: DestinationsNavigator
 ) {
     Card(
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(12.dp),
         elevation = 4.dp,
         backgroundColor = Color.White,
         modifier = Modifier
@@ -143,7 +143,7 @@ fun ImageBigCard(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(zGreenColor),
+                        .background(zGreenColor.copy(0.8f)),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ) {
@@ -267,12 +267,12 @@ fun ImageBigCard(
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.Center,
-                            modifier = Modifier.padding(3.dp)
+                            modifier = Modifier.padding(vertical = 3.dp, horizontal = 4.dp)
                         ) {
                             Icon(
                                 painter = painterResource(id = R.drawable.ic_baseline_timer_24),
                                 contentDescription = "",
-                                tint = Color.Green
+                                tint = zGreenColor
                             )
                             Text(
                                 text = " $deliveryTimeInMins mins | $deliveryDistanceInKms km",
@@ -384,7 +384,7 @@ fun ContentBigCard(
                 horizontalArrangement = Arrangement.Center
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.leaf_vector),
+                    painter = painterResource(id = R.drawable.recycle_png),
                     contentDescription = stringResource(R.string.recycle),
                     tint = zGreenColor,
                     modifier = Modifier.size(15.dp)

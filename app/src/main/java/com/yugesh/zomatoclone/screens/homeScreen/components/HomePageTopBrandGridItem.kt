@@ -29,6 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yugesh.zomatoclone.R
+import com.yugesh.zomatoclone.ui.theme.zBlueColor
 
 @Composable
 fun HomePageTopBrandGridItem(
@@ -73,7 +74,7 @@ fun HomePageTopBrandGridItem(
 
                         if (discount != null) {
                             Card(
-                                backgroundColor = Color(0xFF2748FF)
+                                backgroundColor = zBlueColor
                             ) {
                                 Text(
                                     text = discount,
@@ -108,7 +109,8 @@ fun HomePageTopBrandGridItem(
                             )
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.Center
+                                horizontalArrangement = Arrangement.Center,
+                                modifier = Modifier.padding(bottom = 2.dp)
                             ) {
                                 Icon(
                                     painter = painterResource(id = R.drawable.ic_baseline_timer_24),
