@@ -13,7 +13,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.yugesh.zomatoclone.screens.commonComponents.zSystemTopAppBarBgColor
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.DropDownList
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenBottomBar
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenCategoryDropDown
@@ -22,6 +21,7 @@ import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScre
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenOfferScrollableRow
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.RestaurantScreenTopAppBar
 import com.yugesh.zomatoclone.screens.restaurantScreen.components.SwitchButtonsRow
+import com.yugesh.zomatoclone.ui.theme.zSystemTopAppBarBgColor
 
 @com.ramcosta.composedestinations.annotation.Destination
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")

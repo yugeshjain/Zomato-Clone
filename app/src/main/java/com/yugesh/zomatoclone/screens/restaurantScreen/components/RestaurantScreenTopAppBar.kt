@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.yugesh.zomatoclone.screens.commonComponents.zLightGreyBorder
+import com.yugesh.zomatoclone.ui.theme.zLightGreyBorder
 
 @Composable
 fun RestaurantScreenTopAppBar() {

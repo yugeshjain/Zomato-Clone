@@ -18,6 +18,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import com.yugesh.zomatoclone.ui.theme.zBlack
+import com.yugesh.zomatoclone.ui.theme.zLightGray
+import com.yugesh.zomatoclone.ui.theme.zRedColor
+import com.yugesh.zomatoclone.ui.theme.zSelectedFilterRowItemBg
+import com.yugesh.zomatoclone.ui.theme.zWhite
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -42,7 +47,7 @@ fun FilterRowCard(
         } else {
             BorderStroke(0.5.dp, zLightGray)
         },
-        onClick = { onClick },
+        onClick = { onClick() },
         backgroundColor = if (selectedChipIndex == int) {
             zSelectedFilterRowItemBg
         } else {

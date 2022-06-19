@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import com.yugesh.zomatoclone.screens.commonComponents.zSearchBarBgColor
+import com.yugesh.zomatoclone.ui.theme.zSearchBarBgColor
 
 @Composable
 fun SearchTextField(

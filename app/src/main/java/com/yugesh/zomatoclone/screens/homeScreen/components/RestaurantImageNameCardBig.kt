@@ -39,10 +39,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.R
-import com.yugesh.zomatoclone.screens.commonComponents.zBlueColor
-import com.yugesh.zomatoclone.screens.commonComponents.zGreenColor
-import com.yugesh.zomatoclone.screens.commonComponents.zRedColor
 import com.yugesh.zomatoclone.screens.destinations.RestaurantScreenDestination
+import com.yugesh.zomatoclone.ui.theme.zBlueColor
+import com.yugesh.zomatoclone.ui.theme.zGreenColor
+import com.yugesh.zomatoclone.ui.theme.zRedColor
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable

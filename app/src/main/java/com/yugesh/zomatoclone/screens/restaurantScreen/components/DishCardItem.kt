@@ -36,18 +36,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yugesh.zomatoclone.R
-import com.yugesh.zomatoclone.screens.commonComponents.zBlack
-import com.yugesh.zomatoclone.screens.commonComponents.zDarkGray
-import com.yugesh.zomatoclone.screens.commonComponents.zDishLabelBg
-import com.yugesh.zomatoclone.screens.commonComponents.zDishLabelTextColor
-import com.yugesh.zomatoclone.screens.commonComponents.zItemAddButtonBg
-import com.yugesh.zomatoclone.screens.commonComponents.zNonVegIconColor
-import com.yugesh.zomatoclone.screens.commonComponents.zRatingCardYellowBg
-import com.yugesh.zomatoclone.screens.commonComponents.zRatingCardYellowBorder
-import com.yugesh.zomatoclone.screens.commonComponents.zRedColor
 import com.yugesh.zomatoclone.screens.commonComponents.zRupeeSign
-import com.yugesh.zomatoclone.screens.commonComponents.zVegIconColor
-import com.yugesh.zomatoclone.screens.commonComponents.zWhite
+import com.yugesh.zomatoclone.ui.theme.zBlack
+import com.yugesh.zomatoclone.ui.theme.zDarkGray
+import com.yugesh.zomatoclone.ui.theme.zDishLabelBg
+import com.yugesh.zomatoclone.ui.theme.zDishLabelTextColor
+import com.yugesh.zomatoclone.ui.theme.zItemAddButtonBg
+import com.yugesh.zomatoclone.ui.theme.zNonVegIconColor
+import com.yugesh.zomatoclone.ui.theme.zRatingCardYellowBg
+import com.yugesh.zomatoclone.ui.theme.zRatingCardYellowBorder
+import com.yugesh.zomatoclone.ui.theme.zRedColor
+import com.yugesh.zomatoclone.ui.theme.zVegIconColor
+import com.yugesh.zomatoclone.ui.theme.zWhite
 
 @Composable
 fun DishCardItem(

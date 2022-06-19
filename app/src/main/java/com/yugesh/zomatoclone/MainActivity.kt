@@ -24,10 +24,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        installSplashScreen().apply {
-            setKeepVisibleCondition {
-                viewModel.isLoading.value
-            }
+        installSplashScreen().setKeepOnScreenCondition {
+            viewModel.isLoading.value
         }
         setContent {
             ZomatoCloneTheme {
@@ -36,8 +34,10 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     DestinationsNavHost(navGraph = NavGraphs.root) {
-                        composable(destination = CountryPickerScreenDestination){
-                            CountryPickerScreen(navigator = destinationsNavigator, pickedCountry = {})
+                        composable(destination = CountryPickerScreenDestination) {
+                            CountryPickerScreen(
+                                navigator = destinationsNavigator,
+                                pickedCountry = {})
                         }
                     }
                 }
