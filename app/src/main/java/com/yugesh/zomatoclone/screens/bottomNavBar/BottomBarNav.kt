@@ -6,7 +6,6 @@ import com.ramcosta.composedestinations.spec.DirectionDestinationSpec
 import com.yugesh.zomatoclone.R
 import com.yugesh.zomatoclone.screens.destinations.DiningScreenDestination
 import com.yugesh.zomatoclone.screens.destinations.HomeScreenDestination
-import com.yugesh.zomatoclone.screens.destinations.ZplScreenDestination
 
 enum class BottomBarNav(
     val direction: DirectionDestinationSpec,

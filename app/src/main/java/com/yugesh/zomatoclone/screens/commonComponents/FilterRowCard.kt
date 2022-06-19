@@ -40,7 +40,7 @@ fun FilterRowCard(
         mutableStateOf(test)
     }
     Card(
-        modifier = Modifier.padding(5.dp),
+        modifier = Modifier.padding(top = 5.dp, bottom = 5.dp, end = 10.dp),
         shape = RoundedCornerShape(10.dp),
         border = if (selectedChipIndex == int) {
             BorderStroke(0.5.dp, zRedColor)

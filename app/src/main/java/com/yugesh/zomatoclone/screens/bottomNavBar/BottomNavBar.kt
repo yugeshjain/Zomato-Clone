@@ -16,6 +16,8 @@ import com.yugesh.zomatoclone.screens.NavGraphs
 import com.yugesh.zomatoclone.screens.appCurrentDestinationAsState
 import com.yugesh.zomatoclone.screens.destinations.Destination
 import com.yugesh.zomatoclone.screens.startAppDestination
+import com.yugesh.zomatoclone.ui.theme.zDarkGray
+import com.yugesh.zomatoclone.ui.theme.zRedColor
 
 
 @Composable
@@ -41,8 +43,8 @@ fun BottomNavBar(
                 },
                 label = { Text(text = stringResource(it.label), color = Color.DarkGray) },
                 modifier = Modifier.background(Color.White),
-                unselectedContentColor = Color.DarkGray,
-                selectedContentColor = Color.Red
+                unselectedContentColor = zDarkGray,
+                selectedContentColor = zRedColor
             )
         }
     }
