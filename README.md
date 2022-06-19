@@ -11,7 +11,7 @@ the app till now ->
 <br>
 <div align="left">
     <a href = "https://twitter.com/YugeshJain">
-        <img src = "https://img.shields.io/twitter/url?label=follow&style=social&url=https%3A%2F%2Ftwitter.com%2Fyugeshjain" />
+        <img src = "https://img.shields.io/twitter/url?label=twitter&style=for-the-badge&logo=twitter&url=https%3A%2F%2Ftwitter.com%2Fyugeshjain" />
     </a>
     <a href = "https://www.linkedin.com/in/yugeshjain/">
         <img src = "https://img.shields.io/badge/-linkedin-0077B5?style=for-the-badge&logo=linkedin" />
