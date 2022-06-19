@@ -26,7 +26,7 @@ fun HomeScreenFilterItemRow() {
         LazyRow(
             modifier = Modifier
                 .background(Color.White)
-                .padding(horizontal = 10.dp),
+                .padding(start = 10.dp),
         ) {
             items(1) {
                 FilterRowCard(
