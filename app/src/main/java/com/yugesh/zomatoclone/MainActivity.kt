@@ -1,6 +1,7 @@
 package com.yugesh.zomatoclone
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -23,11 +24,11 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        installSplashScreen().apply {
-            setKeepVisibleCondition {
-                viewModel.isLoading.value
-            }
+        installSplashScreen().setKeepOnScreenCondition {
+            viewModel.isLoading.value
         }
         setContent {
             ZomatoCloneTheme {
@@ -36,8 +37,10 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     DestinationsNavHost(navGraph = NavGraphs.root) {
-                        composable(destination = CountryPickerScreenDestination){
-                            CountryPickerScreen(navigator = destinationsNavigator, pickedCountry = {})
+                        composable(destination = CountryPickerScreenDestination) {
+                            CountryPickerScreen(
+                                navigator = destinationsNavigator,
+                                pickedCountry = {})
                         }
                     }
                 }

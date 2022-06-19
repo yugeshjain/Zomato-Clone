@@ -21,7 +21,6 @@ import com.yugesh.zomatoclone.screens.diningScreen.components.DiningScreenFilter
 import com.yugesh.zomatoclone.screens.commonComponents.AppMainSearchTextField
 import com.yugesh.zomatoclone.screens.commonComponents.DropDownGrid
 import com.yugesh.zomatoclone.screens.diningScreen.components.DiningScreenFilterGrid
-import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
 import com.yugesh.zomatoclone.screens.homeScreen.components.TopAppBarComposable
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")

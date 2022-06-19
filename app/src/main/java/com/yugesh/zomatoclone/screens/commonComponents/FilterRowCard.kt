@@ -16,10 +16,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.yugesh.zomatoclone.ui.theme.PrimeOne
+import com.yugesh.zomatoclone.ui.theme.zBlack
+import com.yugesh.zomatoclone.ui.theme.zLightGray
+import com.yugesh.zomatoclone.ui.theme.zRedColor
+import com.yugesh.zomatoclone.ui.theme.zSelectedFilterRowItemBg
+import com.yugesh.zomatoclone.ui.theme.zWhite
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -37,18 +40,18 @@ fun FilterRowCard(
         mutableStateOf(test)
     }
     Card(
-        modifier = Modifier.padding(5.dp),
+        modifier = Modifier.padding(top = 5.dp, bottom = 5.dp, end = 10.dp),
         shape = RoundedCornerShape(10.dp),
         border = if (selectedChipIndex == int) {
-            BorderStroke(0.5.dp, Color.Red)
+            BorderStroke(0.5.dp, zRedColor)
         } else {
-            BorderStroke(0.5.dp, Color.LightGray)
+            BorderStroke(0.5.dp, zLightGray)
         },
-        onClick = { onClick },
+        onClick = { onClick() },
         backgroundColor = if (selectedChipIndex == int) {
-            Color(0xFFFFEBEB)
+            zSelectedFilterRowItemBg
         } else {
-            Color.White
+            zWhite
         }
     ) {
         Row(
@@ -60,15 +63,15 @@ fun FilterRowCard(
                 Icon(
                     imageVector = leadingIcon,
                     contentDescription = leadingIconContentDescription,
-                    tint = PrimeOne
+                    tint = zRedColor
                 )
             }
-            Text(text = text, color = Color.Black, modifier = Modifier.padding(6.dp))
+            Text(text = text, color = zBlack, modifier = Modifier.padding(6.dp))
             if (trailingIcon != null) {
                 Icon(
                     imageVector = trailingIcon,
                     contentDescription = trailingIconContentDescription,
-                    tint = PrimeOne
+                    tint = zRedColor
                 )
             }
         }

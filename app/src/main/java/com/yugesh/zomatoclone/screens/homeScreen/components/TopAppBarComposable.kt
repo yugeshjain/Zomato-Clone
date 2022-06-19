@@ -1,5 +1,6 @@
 package com.yugesh.zomatoclone.screens.homeScreen.components
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,29 +24,35 @@ import com.yugesh.zomatoclone.ui.theme.PrimeOne
 fun TopAppBarComposable() {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.padding(top = 5.dp, start = 5.dp, end = 5.dp)
+        horizontalArrangement = Arrangement.SpaceBetween,
+        modifier = Modifier.padding(top = 5.dp, start = 10.dp, end = 10.dp).fillMaxWidth()
     ) {
-        Icon(
-            imageVector = Icons.Filled.LocationOn,
-            contentDescription = "Location Icon",
-            tint = PrimeOne,
-            modifier = Modifier.padding(5.dp)
-        )
-        Column(Modifier.fillMaxWidth(0.9f)) {
-            Row {
-                Text(
-                    text = "Location",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp,
-                    color = Color.Black
-                )
-                Icon(
-                    imageVector = Icons.Filled.ArrowDropDown,
-                    contentDescription = "Location Drop Down",
-                    tint = Color.Black
-                )
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(vertical = 5.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Filled.LocationOn,
+                contentDescription = "Location Icon",
+                tint = PrimeOne,
+                modifier = Modifier.padding(end = 5.dp)
+            )
+            Column {
+                Row {
+                    Text(
+                        text = "Location",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = Color.Black
+                    )
+                    Icon(
+                        imageVector = Icons.Filled.ArrowDropDown,
+                        contentDescription = "Location Drop Down",
+                        tint = Color.Black
+                    )
+                }
+                Text(text = "Detailed Location", fontSize = 14.sp, color = Color.DarkGray)
             }
-            Text(text = "Detailed Location", fontSize = 14.sp, color = Color.DarkGray)
         }
         Icon(
             imageVector = Icons.Rounded.Menu,

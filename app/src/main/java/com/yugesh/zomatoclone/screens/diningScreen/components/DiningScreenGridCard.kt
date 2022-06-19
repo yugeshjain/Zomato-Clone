@@ -37,7 +37,7 @@ fun DiningScreenGridCard(
             .width((LocalConfiguration.current.screenWidthDp / 4.25).dp)
             .fillMaxHeight()
             .padding(top = 5.dp, start = 6.dp)
-            .clickable { onCLick }
+            .clickable { onCLick() }
     ) {
         Card(
             modifier = Modifier

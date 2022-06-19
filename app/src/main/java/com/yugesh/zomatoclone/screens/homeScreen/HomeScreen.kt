@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
@@ -24,6 +25,7 @@ import com.yugesh.zomatoclone.screens.commonComponents.AppMainSearchTextField
 import com.yugesh.zomatoclone.screens.homeScreen.components.MultipleHomeScreenRestroCards
 import com.yugesh.zomatoclone.screens.homeScreen.components.RestaurantsHomeScreenCircleLogoGrid
 import com.yugesh.zomatoclone.screens.homeScreen.components.TopAppBarComposable
+import com.yugesh.zomatoclone.ui.theme.zSystemTopAppBarBgColor
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Destination
@@ -31,16 +33,15 @@ import com.yugesh.zomatoclone.screens.homeScreen.components.TopAppBarComposable
 fun HomeScreen(
     navigator: DestinationsNavigator
 ) {
-    val bgColor = Color(0xFFEEEEEE)
     val navController = rememberNavController()
     Scaffold(
-        backgroundColor = bgColor,
+        backgroundColor = zSystemTopAppBarBgColor,
         modifier = Modifier
             .fillMaxSize(),
         topBar = {
             TopAppBar(
                 modifier = Modifier
-                    .padding(top = 45.dp),
+                    .statusBarsPadding(),
                 elevation = 0.dp,
                 backgroundColor = Color.White
             ) {
@@ -55,7 +56,6 @@ fun HomeScreen(
                 .fillMaxSize()
                 .background(Color.White)
                 .padding(bottom = 45.dp),
-
             ) {
             AppMainSearchTextField()
             HomeScreenFilterItemRow()

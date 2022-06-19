@@ -502,4 +502,8 @@
     <string name="zomato_recycles_text">Zomato recycles more plastic than used in orders</string>
     <string name="recycle">Recycle</string>
     <string name="offer_percentage">Offer Percentage</string>
+    <string name="pure_veg">PURE VEG</string>
+    <string name="bestseller">Bestseller</string>
+    <string name="veg_or_non_veg_icon">Veg or Non-Veg Icon</string>
+    <string name="must_try">Must Try</string>
 </resources>

@@ -26,10 +26,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -39,6 +41,9 @@ import androidx.compose.ui.unit.sp
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.R
 import com.yugesh.zomatoclone.screens.destinations.RestaurantScreenDestination
+import com.yugesh.zomatoclone.ui.theme.zBlueColor
+import com.yugesh.zomatoclone.ui.theme.zGreenColor
+import com.yugesh.zomatoclone.ui.theme.zRedColor
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -60,7 +65,7 @@ fun RestaurantImageNameCardBig(
     navigator: DestinationsNavigator
 ) {
     Card(
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(12.dp),
         elevation = 4.dp,
         backgroundColor = Color.White,
         modifier = Modifier
@@ -77,6 +82,7 @@ fun RestaurantImageNameCardBig(
                     deliveryDistanceInKms,
                     isMultipleLocations = true,
                     deliveryTimeInMins,
+                    isPureVegetarian,
                     ratingText
                 )
             )
@@ -118,8 +124,7 @@ fun ImageBigCard(
     var isFavourite by remember {
         mutableStateOf(false)
     }
-    val greenColor = Color(0xFF388D3C)
-    val blueColor = Color(0xFF6078FF)
+
 
     Box(
         contentAlignment = Alignment.TopCenter,
@@ -130,7 +135,8 @@ fun ImageBigCard(
     ) {
         Image(
             painter = painterResource(id = image),
-            contentDescription = stringResource(R.string.restaurant_image)
+            contentDescription = stringResource(R.string.restaurant_image),
+            contentScale = ContentScale.FillBounds
         )
 
         Column {
@@ -138,7 +144,7 @@ fun ImageBigCard(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(greenColor),
+                        .background(zGreenColor.copy(0.8f)),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ) {
@@ -223,7 +229,7 @@ fun ImageBigCard(
                 ) {
                     Card(
                         shape = RoundedCornerShape(topEnd = 6.dp, bottomEnd = 6.dp),
-                        backgroundColor = blueColor,
+                        backgroundColor = zBlueColor,
                     ) {
                         Row(
                             modifier = Modifier.padding(vertical = 3.dp, horizontal = 7.dp),
@@ -262,12 +268,12 @@ fun ImageBigCard(
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.Center,
-                            modifier = Modifier.padding(3.dp)
+                            modifier = Modifier.padding(vertical = 3.dp, horizontal = 4.dp)
                         ) {
                             Icon(
                                 painter = painterResource(id = R.drawable.ic_baseline_timer_24),
                                 contentDescription = "",
-                                tint = Color.Green
+                                tint = zGreenColor
                             )
                             Text(
                                 text = " $deliveryTimeInMins mins | $deliveryDistanceInKms km",
@@ -295,8 +301,6 @@ fun ContentBigCard(
     isClosesSoon: Boolean = false,
     isRecycleFriendly: Boolean = false
 ) {
-    val redColor = Color(0xFFF80707)
-
     Column(
         modifier = Modifier.padding(10.dp)
     ) {
@@ -322,7 +326,7 @@ fun ContentBigCard(
                 if (isClosesSoon) {
                     Text(
                         text = "Closes in $closingSoonTimeInMins Mins",
-                        color = redColor,
+                        color = zRedColor,
                         fontSize = 12.sp,
                         fontWeight = FontWeight.SemiBold,
                     )
@@ -335,7 +339,7 @@ fun ContentBigCard(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(6.dp))
-                        .background(Color(0xFF388D3C))
+                        .background(zGreenColor)
                 ) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -381,9 +385,9 @@ fun ContentBigCard(
                 horizontalArrangement = Arrangement.Center
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.leaf_vector),
+                    painter = painterResource(id = R.drawable.recycle_png),
                     contentDescription = stringResource(R.string.recycle),
-                    tint = Color(0xFF388D3C),
+                    tint = zGreenColor,
                     modifier = Modifier.size(15.dp)
                 )
                 Text(
