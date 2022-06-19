@@ -22,7 +22,7 @@ the app till now ->
 
 Demo             |  Login Screen | Country Picker Screen
 :-------------------------:|:-------------------------: | :-------------------------: 
-<img src="art/home_Screen.jpg" width=240 />  |  <img src="art/login_screen.jpg" width=240 /> | <img src="art/country_picker_screen.jpg" width=240 />
+<img src="art/demo.gif" width=240 />  |  <img src="art/login_screen.jpg" width=240 /> | <img src="art/country_picker_screen.jpg" width=240 />
 
 Home Screen            |  Restaurant Card | Restaurant Details
 :-------------------------:|:-------------------------: | :-------------------------: 
