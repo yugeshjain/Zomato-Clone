@@ -1,6 +1,5 @@
 package com.yugesh.zomatoclone.screens.homeScreen.components
 
-import android.util.Log
 import android.view.MotionEvent
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.animateFloatAsState
@@ -59,10 +58,7 @@ fun HomePageTopBrandGridItem(
             .width((LocalConfiguration.current.screenWidthDp / 4.25).dp)
             .fillMaxHeight()
             .padding(top = 5.dp, start = 6.dp)
-            .clickable(interactionSource = interactionSource, indication = null) {
-                onCLick()
-                Log.d("TAG", "HomePageTopBrandGridItem: CLICKED")
-            }
+            .clickable(interactionSource = interactionSource, indication = null) { onCLick() }
             .scale(scale.value)
             .pointerInteropFilter {
                 when (it.action) {

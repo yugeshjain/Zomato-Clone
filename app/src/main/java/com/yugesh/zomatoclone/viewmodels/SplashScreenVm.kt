@@ -1,4 +1,4 @@
-package com.yugesh.zomatoclone
+package com.yugesh.zomatoclone.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

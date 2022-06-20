@@ -17,6 +17,7 @@ import com.yugesh.zomatoclone.screens.NavGraphs
 import com.yugesh.zomatoclone.screens.countryPicker.CountryPickerScreen
 import com.yugesh.zomatoclone.screens.destinations.CountryPickerScreenDestination
 import com.yugesh.zomatoclone.ui.theme.ZomatoCloneTheme
+import com.yugesh.zomatoclone.viewmodels.SplashScreenVm
 
 class MainActivity : ComponentActivity() {
 
