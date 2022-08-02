@@ -10,6 +10,10 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -26,11 +30,13 @@ fun FilterRowCard(
     text: String,
     leadingIcon: ImageVector? = null,
     trailingIcon: ImageVector? = null,
-    isSelected: Boolean = false,
     leadingIconContentDescription: String? = "",
-    trailingIconContentDescription: String? = "",
-    onClick: () -> Unit
+    trailingIconContentDescription: String? = ""
 ) {
+    var isSelected by remember {
+        mutableStateOf(false)
+    }
+
     Card(
         modifier = Modifier.padding(top = 5.dp, bottom = 5.dp, end = 10.dp),
         shape = RoundedCornerShape(10.dp),
@@ -39,7 +45,7 @@ fun FilterRowCard(
         } else {
             BorderStroke(0.5.dp, zLightGray)
         },
-        onClick = { onClick() },
+        onClick = { isSelected = !isSelected },
         backgroundColor = if (isSelected) {
             zSelectedFilterRowItemBg
         } else {

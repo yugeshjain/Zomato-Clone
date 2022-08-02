@@ -6,28 +6,16 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Surface
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowDropDown
-import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.yugesh.zomatoclone.screens.commonComponents.FilterRowCard
-import java.util.logging.Filter
 
 @Composable
 fun HomeScreenFilterItemRow(
-    categories: List<HomeScreenFilterItems>,
-    selectedCategory: HomeScreenFilterItems?,
+    categories: List<HomeScreenFilterItems>
 ) {
-    var selectedChipIndex by remember {
-        mutableStateOf(1)
-    }
     Surface {
         val scrollState = rememberLazyListState()
         LazyRow(
@@ -39,10 +27,8 @@ fun HomeScreenFilterItemRow(
             items(categories) {
                 FilterRowCard(
                     text = it.text,
-                    isSelected = selectedCategory == it,
                     leadingIcon = it.leadingIcon,
-                    trailingIcon = it.trailingIcon,
-                    onClick = {}
+                    trailingIcon = it.trailingIcon
                 )
             }
 //            for (category in getAllHomeScreenFilterItems()) {

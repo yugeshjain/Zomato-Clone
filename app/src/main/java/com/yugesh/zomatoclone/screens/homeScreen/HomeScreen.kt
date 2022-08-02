@@ -18,17 +18,15 @@ import androidx.navigation.compose.rememberNavController
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.yugesh.zomatoclone.screens.bottomNavBar.BottomNavBar
-import com.yugesh.zomatoclone.screens.commonComponents.DropDownGrid
-import com.yugesh.zomatoclone.screens.homeScreen.components.HomeScreenFilterItemRow
-import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
 import com.yugesh.zomatoclone.screens.commonComponents.AppMainSearchTextField
+import com.yugesh.zomatoclone.screens.commonComponents.DropDownGrid
+import com.yugesh.zomatoclone.screens.homeScreen.components.FoodTypesHomeScreenCircleGrid
+import com.yugesh.zomatoclone.screens.homeScreen.components.HomeScreenFilterItemRow
 import com.yugesh.zomatoclone.screens.homeScreen.components.MultipleHomeScreenRestroCards
 import com.yugesh.zomatoclone.screens.homeScreen.components.RestaurantsHomeScreenCircleLogoGrid
 import com.yugesh.zomatoclone.screens.homeScreen.components.TopAppBarComposable
 import com.yugesh.zomatoclone.screens.homeScreen.components.getAllHomeScreenFilterItems
 import com.yugesh.zomatoclone.ui.theme.zSystemTopAppBarBgColor
-import com.yugesh.zomatoclone.viewmodels.SplashScreenVm
-import com.yugesh.zomatoclone.viewmodels.ZomatoCloneAppVm
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Destination
@@ -36,9 +34,7 @@ import com.yugesh.zomatoclone.viewmodels.ZomatoCloneAppVm
 fun HomeScreen(
     navigator: DestinationsNavigator
 ) {
-    val viewModel = ZomatoCloneAppVm()
     val navController = rememberNavController()
-    val selectedCategory = viewModel.selectedCategory.value
     Scaffold(
         backgroundColor = zSystemTopAppBarBgColor,
         modifier = Modifier
@@ -63,7 +59,7 @@ fun HomeScreen(
                 .padding(bottom = 45.dp),
             ) {
             AppMainSearchTextField()
-            HomeScreenFilterItemRow(categories = getAllHomeScreenFilterItems(), selectedCategory = selectedCategory)
+            HomeScreenFilterItemRow(categories = getAllHomeScreenFilterItems())
             RestaurantsHomeScreenCircleLogoGrid()
             FoodTypesHomeScreenCircleGrid("Eat What Makes You happy")
             DropDownGrid(

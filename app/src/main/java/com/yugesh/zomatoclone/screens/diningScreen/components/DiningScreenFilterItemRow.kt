@@ -8,10 +8,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -19,9 +15,6 @@ import com.yugesh.zomatoclone.screens.commonComponents.FilterRowCard
 
 @Composable
 fun DiningScreenFilterItemRow() {
-    var selectedChipIndex by remember {
-        mutableStateOf(1)
-    }
     Surface {
         LazyRow(
             modifier = Modifier
@@ -32,64 +25,54 @@ fun DiningScreenFilterItemRow() {
                 FilterRowCard(
                     text = "Relevance",
                     leadingIcon = Icons.Default.Info,
-                    trailingIcon = Icons.Filled.ArrowDropDown,
-                    onClick = { selectedChipIndex = 1 }
+                    trailingIcon = Icons.Filled.ArrowDropDown
                 )
             }
             items(1) {
                 FilterRowCard(
-                    text = "MAX Safety",
-                    onClick = { selectedChipIndex = 2 }
+                    text = "MAX Safety"
                 )
             }
             items(1) {
                 FilterRowCard(
-                    text = "Nearest",
-                    onClick = { selectedChipIndex = 3 }
+                    text = "Nearest"
                 )
             }
             items(1) {
                 FilterRowCard(
-                    text = "Book Table",
-                    onClick = { selectedChipIndex = 4 }
+                    text = "Book Table"
                 )
             }
             items(1) {
                 FilterRowCard(
                     text = "Cuisines",
-                    trailingIcon = Icons.Filled.ArrowDropDown,
-                    onClick = { selectedChipIndex = 6 }
+                    trailingIcon = Icons.Filled.ArrowDropDown
                 )
             }
             items(1) {
                 FilterRowCard(
-                    text = "Outdoor Seating",
-                    onClick = { selectedChipIndex = 5 }
+                    text = "Outdoor Seating"
                 )
             }
             items(1) {
                 FilterRowCard(
-                    text = "Serves Alcohol",
-                    onClick = { selectedChipIndex = 5 }
+                    text = "Serves Alcohol"
                 )
             }
             items(1) {
                 FilterRowCard(
-                    text = "Pure Veg",
-                    onClick = { selectedChipIndex = 5 }
+                    text = "Pure Veg"
                 )
             }
             items(1) {
                 FilterRowCard(
-                    text = "Open Now",
-                    onClick = { selectedChipIndex = 5 }
+                    text = "Open Now"
                 )
             }
             items(1) {
                 FilterRowCard(
                     text = "More",
-                    trailingIcon = Icons.Filled.ArrowDropDown,
-                    onClick = { selectedChipIndex = 5 }
+                    trailingIcon = Icons.Filled.ArrowDropDown
                 )
             }
         }
