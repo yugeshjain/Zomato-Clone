@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Zomato Clone"
 include ':app'
+include ':domain'
+include ':data'
